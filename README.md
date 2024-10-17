@@ -1,8 +1,21 @@
-# React + Vite
+# Harmonix Frontend 🎶
+This is the frontend for the Harmonix web application, which allows users to generate Spotify playlists based on their mood or theme. Users log in with their Spotify account, enter a mood or theme, and view a custom playlist created based on their prompt.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- **Spotify Authentication**: Login with Spotify to enable personalized playlist generation.
+- **Mood-Based Playlist Generation**: Input a mood or theme to generate a playlist using the OpenAI API (handled by the backend).
+- **User-Friendly Interface**: Responsive and simple interface with personalized greetings.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **React**: For building the user interface.
+- **Vite**: For fast development and bundling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
+1. **Log in with Spotify**:
+   - On the landing page, click "Login with Spotify" to authenticate.
+2. **Generate a Playlist**:
+   - After logging in, enter a mood or theme and click "Generate Playlist" to view a custom playlist based on your prompt.
+
+## Acknowledgements
+- Thanks to [OpenAI](https://openai.com) for the GPT API used in the backend.
+- Thanks to [Spotify](https://developer.spotify.com) for providing the Spotify Web API.
