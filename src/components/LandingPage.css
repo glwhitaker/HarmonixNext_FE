@@ -1,0 +1,20 @@
+#root {
+    --clr-1: #261C93;
+    --clr-2: #5C1783;
+    --clr-3: #921272;
+    --clr-4: #C70C62;
+    --clr-5: #FD0751;
+  }
+  
+  .LandingPage::before,
+  .LandingPage::after {
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(
+        var(--clr-1),
+        var(--clr-2),
+        var(--clr-3),
+        var(--clr-4),
+        var(--clr-5));
+    border-radius: inherit;
+  }
