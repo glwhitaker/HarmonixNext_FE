@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+:root {
+  --clr-1: #261C93;
+  --clr-2: #5C1783;
+  --clr-3: #921272;
+  --clr-4: #C70C62;
+  --clr-5: #FD0751;
+}
 /* src/App.css */
 
 .App {
@@ -14,11 +21,48 @@
   justify-content: center;
   padding: 2rem;
   max-width: 1000px;
-  width: 100%;
+  width: 70vh;
   margin: 0 auto;
-  background-color: #333;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  background-color: #333;
+  position: relative;
+}
+
+.App::before,
+.App::after {
+    content: '';
+    position: absolute;
+    inset: -.5rem;
+    z-index: -1;
+    background: conic-gradient(
+        from var(--gradient-angle),
+        var(--clr-1),
+        var(--clr-2),
+        var(--clr-3),
+        var(--clr-4),
+        var(--clr-5),
+        var(--clr-4),
+        var(--clr-3),
+        var(--clr-2),
+        var(--clr-1));
+    border-radius: inherit;
+    animation: rotation 20s linear infinite;
+}
+
+.App::after {
+  filter: blur(1.5rem);
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotation {
+  0% {--gradient-angle: 0deg;}
+  100% {--gradient-angle: 360deg;}
 }
 
 h1 {
@@ -57,7 +101,6 @@ input[type="text"]:focus {
 
 /* Button */
 button {
-  background-color: #535bf2;
   color: #f3f3f3;
   padding: 0.75rem;
   border-radius: 5px;
@@ -67,11 +110,11 @@ button {
 }
 
 button:hover {
-  background-color: #646cff;
+  background-color: #242424;
 }
 
 button:focus {
-  outline: 3px solid #535bf2;
+  outline: 3px solid gray;
 }
 
 /* Playlist Display */
@@ -105,6 +148,10 @@ li strong {
 li span {
   font-size: 0.9rem;
   color: #c3c3c3;
+}
+
+.playlist-name {
+  text-transform: uppercase;
 }
 
 /* Responsive Design */

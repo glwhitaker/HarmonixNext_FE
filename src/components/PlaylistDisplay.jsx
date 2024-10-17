@@ -1,8 +1,8 @@
 // src/components/PlaylistDisplay.jsx
-const PlaylistDisplay = ({ playlist }) => {
+const PlaylistDisplay = ({ playlist, prompt }) => {
     return (
         <div>
-            <h3>Generated Playlist</h3>
+            <h3 className="playlist-name">{prompt}</h3>
             <ul>
                 {playlist.map((song, index) => (
                     <li key={index}>
