@@ -1,6 +1,7 @@
 // src/components/PlaylistForm.jsx
 import { useState } from 'react';
 
+// eslint-disable-next-line react/prop-types
 const PlaylistForm = ({ onGenerate }) => {
     const [prompt, setPrompt] = useState('');
 

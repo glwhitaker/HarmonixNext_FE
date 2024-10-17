@@ -1,4 +1,5 @@
 
+// eslint-disable-next-line react/prop-types
 function LandingPage({ onLogin }) {
     return (
         <div>

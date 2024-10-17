@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // src/components/PlaylistDisplay.jsx
 const PlaylistDisplay = ({ playlist, prompt }) => {
     return (

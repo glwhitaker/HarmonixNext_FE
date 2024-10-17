@@ -50,10 +50,14 @@ button {
 button:hover {
   border-color: lightgrey;
 }
-button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 3px solid gray; /* Only show the outline for keyboard navigation */
 }
+
+button:focus {
+  outline: none; /* Remove the outline for mouse clicks */
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

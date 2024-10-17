@@ -4,6 +4,7 @@ import LandingPage from './components/LandingPage';
 import PlaylistGenerator from './components/PlaylistGenerator';
 import './App.css';
 import './index.css';
+import { fetchSpotifyUser } from './services/api'; // Import Spotify API function
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -16,10 +17,10 @@ function App() {
             sessionStorage.setItem('spotify_access_token', accessToken);
             window.history.replaceState({}, document.title, '/');
             setIsAuthenticated(true);
-            fetchSpotifyUser(accessToken);
+            getUserData(accessToken);
         } else if (sessionStorage.getItem('spotify_access_token')) {
             setIsAuthenticated(true);
-            fetchSpotifyUser(sessionStorage.getItem('spotify_access_token'));
+            getUserData(sessionStorage.getItem('spotify_access_token'));
         }
     }, []);
 
@@ -27,15 +28,10 @@ function App() {
         window.location.href = 'http://localhost:5000/spotify/login';
     };
 
-    const fetchSpotifyUser = async (token) => {
+    const getUserData = async (token) => {
         try {
-            const response = await fetch('http://localhost:5000/spotify/user', {
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                }
-            });
-            const data = await response.json();
-            setUsername(data.display_name);
+            const userData = await fetchSpotifyUser(token);
+            setUsername(userData.display_name);
         } catch (error) {
             console.error('Failed to fetch Spotify user:', error);
         }

@@ -5,6 +5,7 @@ import PlaylistDisplay from './PlaylistDisplay';
 import { generatePlaylist } from '../services/api';
 import './PlaylistGenerator.css';
 
+// eslint-disable-next-line react/prop-types
 function PlaylistGenerator({ username }) {
     const [playlist, setPlaylist] = useState([]);
     const [prompt, setPrompt] = useState('');
