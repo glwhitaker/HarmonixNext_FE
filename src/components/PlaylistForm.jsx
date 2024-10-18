@@ -12,15 +12,16 @@ const PlaylistForm = ({ onGenerate }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
-                type="text"
+            <textarea
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
-                placeholder="Enter a mood or theme"
+                placeholder="Enter a mood or theme . . ."
+                rows="4" // This controls the height in terms of visible lines
                 required
             />
             <button type="submit">Generate Playlist</button>
         </form>
+
     );
 };
 

@@ -9,6 +9,30 @@
     animation: spin 1s linear infinite;
 }
 
+.generator {
+    margin-bottom:10vh;
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.profile-links {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    align-items: flex-end; /* Push items to the right */
+    gap: 10px; /* Add spacing between links */
+    font-size: 0.8rem; /* Make the text smaller */
+}
+
+.profile-links a {
+    margin: 0;
+}
+
+
 @keyframes spin {
     to {
         transform: rotate(360deg);

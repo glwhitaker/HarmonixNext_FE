@@ -38,7 +38,7 @@ function App() {
     };
 
     return (
-        <div className="App">
+        <div className={`App ${isAuthenticated ? 'expanded' : ''}`}>
             {!isAuthenticated ? (
                 <LandingPage onLogin={handleLogin} />
             ) : (

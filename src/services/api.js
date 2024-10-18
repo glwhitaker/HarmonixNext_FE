@@ -28,3 +28,33 @@ export const fetchSpotifyUser = async (token) => {
         throw error;
     }
 };
+
+export const createSpotifyPlaylist = async ({ name, description, accessToken, userId }) => {
+    try {
+        const response = await axios.post(`${API_URL}/spotify/create-playlist`, {
+            name,
+            description,
+            accessToken,
+            userId, // Send the userId to the backend
+        });
+        return response.data; // Return the created playlist data
+    } catch (error) {
+        console.error("Error creating Spotify playlist:", error);
+        throw error;
+    }
+};
+
+
+export const addTracksToSpotifyPlaylist = async (playlistId, tracks, accessToken) => {
+    try {
+        const response = await axios.post(`${API_URL}/spotify/add-tracks`, {
+            playlistId,
+            tracks,
+            accessToken,
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error adding tracks to Spotify playlist:", error);
+        throw error;
+    }
+};
