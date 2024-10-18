@@ -11,7 +11,7 @@ function PlaylistGenerator({ username }) {
     const [loading, setLoading] = useState(false);
     const [spotifyPlaylistCreated, setSpotifyPlaylistCreated] = useState(false);
     const [userId, setUserId] = useState(null); // Add userId state
-    const [createdPlaylistId, setCreatedPlaylistId] = useState(null); // Store the created Spotify playlist ID
+    // const [createdPlaylistId, setCreatedPlaylistId] = useState(null); // Store the created Spotify playlist ID
     const [profileUrl, setProfileUrl] = useState(null); // Add profile URL state
 
     useEffect(() => {
@@ -29,6 +29,7 @@ function PlaylistGenerator({ username }) {
 
     const handleGeneratePlaylist = async (prompt) => {
         setLoading(true);
+        setSpotifyPlaylistCreated(false);
         try {
             const generatedPlaylist = await generatePlaylist(prompt);
             setPlaylist(generatedPlaylist);
@@ -55,7 +56,7 @@ function PlaylistGenerator({ username }) {
             
             // Save the playlist ID in state (for future use if needed)
             setSpotifyPlaylistCreated(true);
-            setCreatedPlaylistId(spotifyPlaylist.id);
+            // setCreatedPlaylistId(spotifyPlaylist.id);
     
             // Directly use the playlist ID for adding tracks
             const playlistId = spotifyPlaylist.id;
