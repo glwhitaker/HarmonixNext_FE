@@ -1,5 +1,7 @@
-# Harmonix Frontend 🎶
+# Harmonix 🎶
 This is the frontend for the Harmonix web application, which allows users to generate Spotify playlists based on their mood or theme. Users log in with their Spotify account, enter a mood or theme, and view a custom playlist created based on their prompt.
+
+![image](https://github.com/user-attachments/assets/9ee206fd-078f-46af-a593-2ab693f94e9d)
 
 ## Features
 - **Spotify Authentication**: Login with Spotify to enable personalized playlist generation.
