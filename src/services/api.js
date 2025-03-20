@@ -52,9 +52,23 @@ export const addTracksToSpotifyPlaylist = async (playlistId, tracks, accessToken
             tracks,
             accessToken,
         });
-        return response.data;
+        return response.data; // Now includes validOriginalTracks and recommendedTracks
     } catch (error) {
         console.error("Error adding tracks to Spotify playlist:", error);
+        throw error;
+    }
+};
+
+// Add a new function to validate tracks
+export const validateTracks = async (tracks, accessToken) => {
+    try {
+        const response = await axios.post(`${API_URL}/validate-tracks`, {
+            tracks,
+            accessToken,
+        });
+        return response.data;
+    } catch (error) {
+        console.error("Error validating tracks:", error);
         throw error;
     }
 };
